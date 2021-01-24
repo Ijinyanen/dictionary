@@ -8,6 +8,9 @@ def translator(w):
     if w in data:
         return data[w]
 
+    elif w.capitalize() in data:
+        return data[w.capitalize()]
+
     elif len(get_close_matches(w, data.keys())) > 0:
         yn = input(f"did you mean {get_close_matches(w, data.keys())[0]} instead? Y/N ").upper()
         if yn =="Y":
